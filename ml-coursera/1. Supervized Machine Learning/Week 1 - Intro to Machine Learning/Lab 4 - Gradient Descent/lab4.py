@@ -94,6 +94,7 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient
         if i<100000:      # prevent resource exhaustion 
             J_history.append( cost_function(x, y, w , b))
             p_history.append([w,b])
+            
         # Print cost every at intervals 10 times or as many iterations if < 10
         if i% math.ceil(num_iters/10) == 0:
             print(f"Iteration {i:4}: Cost {J_history[-1]:0.2e} ",
