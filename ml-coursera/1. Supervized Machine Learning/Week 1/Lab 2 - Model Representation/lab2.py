@@ -28,7 +28,7 @@ print(f"x_train.shape: {x_train.shape}")            # x_train.shape: (3,)
 m = x_train.shape[0]
 print(f"Number of training examples is: {m}")       # Number of training examples is: 3
 
-w = 180
+w = 186
 b = 100
 tmp_f_wb = compute_model_output(x_train, w, b,)
 
