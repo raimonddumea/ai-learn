@@ -87,7 +87,7 @@ print(f"Number of training examples is: {m}")
 
 ### Training example `x_i, y_i`
 
-You will use (x$^{(i)}$, y$^{(i)}$) to denote the $i^{th}$ training example. Since Python is zero indexed, (x$^{(0)}$, y$^{(0)}$) is (1.0, 300.0) and (x$^{(1)}$, y$^{(1)}$) is (2.0, 500.0). 
+You will use ($x^{(i)}$, $y^{(i)}$) to denote the $i^{th}$ training example. Since Python is zero indexed, ($x^{(0)}$, $y^{(0)}$) is (1.0, 300.0) and ($x^{(1)}$, $y^{(1)}$) is (2.0, 500.0). 
 
 To access a value in a Numpy array, one indexes the array with the desired offset. For example the syntax to access location zero of `x_train` is `x_train[0]`.
 Run the next code block below to get the $i^{th}$ training example.
