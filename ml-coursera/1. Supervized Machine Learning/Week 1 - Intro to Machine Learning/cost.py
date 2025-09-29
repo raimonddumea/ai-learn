@@ -21,4 +21,5 @@ w = 200
 b = 100
 
 tmp_f_wb = compute_cost(x_train, y_train, w, b)
-print(tmp_f_wb)
+print(f"{tmp_f_wb:.2f}")        # 1666.67
+
