@@ -16,15 +16,30 @@ def compute_gradient(x, y, w, b):
         
     return dj_dw, dj_db
 
-def gradient_descent(x, y, w_in, b_in, alpha, num_iters):
-    b = b_in
+def gradient_descent(x, y, w_in, b_in, max_iters, alpha, tol):
     w = w_in
+    b = b_in
+    iteration = 0
 
-    for _ in range(num_iters):
-        dj_dw, dj_db = compute_gradient(x, y, w , b)
+    while iteration < max_iters:
+        dj_dw, dj_db = compute_gradient(x, y, w, b)
 
-        b = b - alpha * dj_db
+        # Store old values to check convergence
+        w_old = w
+        b_old = b
+
+        # Update parameters
         w = w - alpha * dj_dw
+        b = b - alpha * dj_db
+
+        iteration += 1
+
+        # Check if converged (parameters barely changing)
+        if abs(w - w_old) < tol and abs(b - b_old) < tol:
+            print(f"Converged at iteration {iteration}")
+            break
+    else:
+        print(f"Warning: Reached max iterations ({max_iters}) without converging")
 
     return w, b
 
@@ -37,9 +52,10 @@ w_init = 0
 b_init = 0
 
 # some gradient descent settings
-iterations = 10000
+max_iterations = 10000
 learning_rate = 1.0e-2
+tolerance = 1.0e-6
 
 # run gradient descent
-w_final, b_final = gradient_descent(x_train ,y_train, w_init, b_init, learning_rate, iterations)
+w_final, b_final = gradient_descent(x_train ,y_train, w_init, b_init, max_iterations, learning_rate, tolerance)
 print(f"(w,b) found by gradient descent: ({w_final:.2f},{b_final:.2f})")
