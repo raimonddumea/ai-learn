@@ -59,3 +59,4 @@ tolerance = 1.0e-6
 # run gradient descent
 w_final, b_final = gradient_descent(x_train ,y_train, w_init, b_init, max_iterations, learning_rate, tolerance)
 print(f"(w,b) found by gradient descent: ({w_final:.2f},{b_final:.2f})")
+
