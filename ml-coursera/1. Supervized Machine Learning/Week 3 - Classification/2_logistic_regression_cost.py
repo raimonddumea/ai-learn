@@ -2,7 +2,6 @@
 # calculating the loss for each example and accumulating the total.
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 def sigmoid(z):
     g = 1/(1+np.exp(-z))
